@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="@string/AppName"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="5dp"
+            android:background="#FF000000"
+             />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8">
+
+
+        <ImageView
+            android:id="@+id/eventImage"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/test_rect"
+            app:layout_constraintBottom_toTopOf="@id/eventName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/eventName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="Event Name*"
+            android:padding="5dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+
+
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventImage" />
+
+        <TextView
+            android:id="@+id/eventPageTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Event Details"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventName" />
+
+        <EditText
+            android:id="@+id/eventPageAddressEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="10dp"
+
+            android:background="@drawable/rounded_edit_text"
+            android:hint="Address*"
+            android:padding="5dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:maxLines="1"
+
+            app:layout_constraintBottom_toTopOf="@id/eventPageTimeInLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventPageTitle" />
+
+        <LinearLayout
+            android:id="@+id/eventPageTimeInLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintTop_toBottomOf="@id/eventPageAddressEditText">
+
+            <TextView
+                android:id="@+id/eventAddActivity_StartDate_EditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="2dp"
+                android:layout_weight="1.5"
+
+                android:background="@drawable/rounded_edit_text"
+                android:hint=" Start Date*"
+                android:padding="5dp"
+                android:textSize="15sp"
+
+                android:onClick="initStartDatePickerClick"
+                />
+
+            <TextView
+                android:id="@+id/eventAddActivity_eventStartTime_EditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+
+                android:layout_marginEnd="30dp"
+                android:layout_weight="1.5"
+                android:background="@drawable/rounded_edit_text"
+
+                android:hint=" In Time*"
+                android:padding="5dp"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/eventPageTimeOutLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintTop_toBottomOf="@id/eventPageTimeInLayout">
+
+            <TextView
+                android:id="@+id/eventAddActivity_eventEndDate_EditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="2dp"
+                android:layout_weight="1.5"
+
+                android:background="@drawable/rounded_edit_text"
+
+                android:hint=" End Date*"
+                android:padding="5dp"
+                android:textSize="15sp"
+
+                android:onClick="initEndDatePickerClick"
+                />
+
+            <TextView
+                android:id="@+id/eventAddActivity_eventEndTime_EditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+
+                android:layout_marginEnd="30dp"
+                android:layout_weight="1.5"
+
+                android:background="@drawable/rounded_edit_text"
+                android:hint="Out Time*"
+                android:padding="5dp"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/eventMaxAttendeeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintBottom_toTopOf="@+id/eventPageDescriptionEditText"
+            app:layout_constraintTop_toBottomOf="@+id/eventPageTimeOutLayout">
+
+            <EditText
+                android:id="@+id/editMaxAttendeeText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+
+                android:layout_marginEnd="2dp"
+                android:layout_weight="2"
+
+                android:background="@drawable/rounded_edit_text"
+
+                android:digits="0123456789"
+                android:hint=" Max Attendees (Optional)"
+                android:maxLines="1"
+
+                android:inputType="number"
+                android:maxLength="10"
+                android:padding="5dp"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+
+
+        <EditText
+            android:id="@+id/eventPageDescriptionEditText"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/less_round_edit_text"
+
+            android:gravity="top|start"
+
+            android:hint="Description*"
+            android:inputType="textMultiLine"
+
+            android:minLines="5"
+            android:maxLines="5"
+
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.3"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+
+            app:layout_constraintTop_toBottomOf="@id/eventMaxAttendeeLayout"
+            app:layout_constraintVertical_bias="0.947"
+            tools:layout_editor_absoluteX="30dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <Button
+            android:id="@+id/eventPageCancelButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="30dp"
+            android:text="Cancel"
+            android:backgroundTint="@color/black"
+            android:layout_marginEnd="5dp"
+            />
+        <Button
+            android:id="@+id/eventPageSaveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="30dp"
+            android:text="Save"
+            android:backgroundTint="@color/black"
+            android:layout_marginStart="5dp"
+            />
+
+    </LinearLayout>
+</LinearLayout>

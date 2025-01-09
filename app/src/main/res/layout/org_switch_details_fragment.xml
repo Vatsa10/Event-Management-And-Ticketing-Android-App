@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/eventExtras"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Event Title"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/view_sign_up_attendees_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+
+        android:backgroundTint="@color/black"
+        android:text="View Event"
+
+        android:textSize="20sp"
+        app:cornerRadius="0sp" />
+
+    <Button
+        android:id="@+id/view_map_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:textSize="20sp"
+        app:cornerRadius="0sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/black"
+        android:text="View Map"
+        />
+
+    <Switch
+        android:id="@+id/geolocation_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Geolocation"
+        android:checked="false"
+        app:layout_constraintTop_toBottomOf="@id/switch_details_fragment_QRlayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <LinearLayout
+        android:id="@+id/switch_details_fragment_QRlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        
+        android:orientation="horizontal"
+        android:gravity="center"
+        
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp">
+
+        <ImageView
+            android:id="@+id/organizer_switch_details_fragment_qrImage"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+
+            android:src="@drawable/test_img"/>
+        <LinearLayout
+            android:id="@+id/switch_details_ShareButtonLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/button_rounded_white"
+
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="5dp">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/share_icon"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Share"
+                android:layout_marginTop="2dp"
+                android:textSize="20sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
