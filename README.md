@@ -36,7 +36,7 @@
 ### Steps  
 1. Clone this repository:  
    ```bash
-   git clone https://github.com/yourusername/SwiftCheckIn.git
+   git clone https://github.com/Vatsa10/Event-Management-and-Ticketing-Android-App.git
    ```  
 2. Open the project in Android Studio.  
 3. Configure Firebase by adding your `google-services.json` file to the `/app` directory.  
